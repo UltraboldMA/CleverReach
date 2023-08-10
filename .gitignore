@@ -1,0 +1,9 @@
+vendor/
+composer.lock
+coverage/
+/nbproject/private/
+/nbproject
+/.idea
+.vscode
+.history
+.push.settings.jsonc

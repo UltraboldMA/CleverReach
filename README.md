@@ -1,98 +1,20 @@
 # Laravel-CM
 
-![Laravel CM](img/laravel-cm.png)
+![Laravel CleverReach](img/laravel-cm.png)
 
-**Integration for the v3.2 Campagin Monitor API**
+**Integration for the v3 API**
 
-This package allows you to generate templates using your own resources and
-submit them to Campaign Monitor as content for your newsletter issues.
-It comes complete with a CRUD implementation for saving your content templates
-in the DB.
+This package is a boiler plate for using the CleverReach API v3.
+It contains Actions and Livewire components to handle Groups, Forms and
+Subscribers. You can generate newsletter lists complete with form/group ID
+for generating easy signup forms.
 
-**As of version 2.0.0 only [MJML](https://mjml.io/) will be accepted**
-
-**Support for Laravel 8 was moved to version 3.x**
+**Only Laravel 9/10 are currently supported**
 
 ### Docs
 
--   [Upgrading](#upgrading)
--   [Installation](#installation)
--   [Configuration](#configuration)
--   [Assets](#assets)
--   [Generators](#generators)
--   [Usage](#usage)
--   [Exceptions](#exceptions)
--   [Laravel compatibility](#laravel-compatibility)
--   [Envoyer deployments](#envoyer-deployments)
-
-## Upgrading
-
-### Upgrade from Version 1.x to Version 2.x
-
-If you have previously used LaravelCM you need to follow a few steps to make your setup compatible
-with the new version of LaravelCM.
-
-### Base Layout/Template
-
-Since LaravelCM now offers a multi-layout solution we updated the nomenclature of the files as well
-as the directory structure. You need to copy your existing template images and SCSS to the newly created
-files.
-
-```bash
-../storage/app/laravel-cm/layouts/base
-```
-
-Move all your template code to base.blade.php and all your SCSS to base.scss. These should no longer be
-located in an 'assets' folder. Images are copied to the 'images' folder in the base layout root directory.
-
-### Migrating the config
-
-LaravelCM 2.x provides a lot of new configuration variables that you need to set in order to get everything
-working. If you navigate to the dashboard of LaravelCM you will notice the new configuration options in the
-listing there. It is probably your best bet to delete your current configuration file and republish it from scratch.
-
-### Migration for multi layout option
-
-If you plan on using multiple layouts for your newsletters you need to add a field 'layouts' to your newsletter
-templates table so LaravelCM can keep track of this information.
-
-Your migration should look something like this:
-
-```php
-Schema::table('newsletter_templates', function(Blueprint $table){
-    $table->string('layout')->nullable();
-});
-```
-
-Once that field is added to your template model as well, you should be good to go, after running the install
-command below to move the content to the appropriate locations.
-
-### Install Command
-
-LaravelCM 2.x features a new install command that takes care of publishing the config files and such.
-However, you can also run this to move your existing template files and layouts to the storage folder so
-they don't get lost after deployments.
-
-```bash
-php artisan laravel-cm:install --deployment
-```
-
-This command will only copy the existing template files from the resources folder to storage, delete the
-now empty laravel-cm folder and set a symlink to the newly created storage folder.
-
-### Upgrade from Version 2.x to Version 3.x
-
-If you have previously used LaravelCM you need to follow a few steps to make your setup compatible
-with the new version of LaravelCM.
-
-### Migrating the config
-
-LaravelCM 3.x changed the option 'bootstrap' to 'css_framework' in the config because you can now switch between Bootstrap4 and TailwindCSS.
-
-### Routes Facade
-
-Since Laravel 8 handles routes a bit differently than previous versions you need to provide the namespace of the
-NewsletterTemplateController generated via command to the CMRoutes facade like mentioned below.
+- [Installation](#installation)
+- [Laravel compatibility](#laravel-compatibility)
 
 ## Installation
 
@@ -101,7 +23,7 @@ NewsletterTemplateController generated via command to the CMRoutes facade like m
 Add the package in your composer.json by executing the command.
 
 ```bash
-composer require flobbos/laravel-cm
+composer require ultraboldma/clever-reach
 ```
 
 LaravelCM features auto discover for Laravel. In case this fails, just add the
