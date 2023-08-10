@@ -1,4 +1,4 @@
-# Laravel-CM
+# Laravel-CleverReach
 
 ![Laravel CleverReach](img/laravel-cm.png)
 
