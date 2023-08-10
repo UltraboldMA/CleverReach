@@ -1,6 +1,6 @@
 <?php
 
-namespace Flobbos\LaravelCM;
+namespace UltraboldMA\CleverReach;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
@@ -20,15 +20,30 @@ class CleverReachServiceProvider extends ServiceProvider
       __DIR__ . '/../database/migrations/' => database_path('migrations'),
     ], 'clever-reach-migrations');
 
-    //Publishes defaults
+    //Publishes Models
     $this->publishes([
       __DIR__ . '/Models' => app_path('/Models')
-    ], 'clever-reach-model');
+    ], 'clever-reach-models');
 
-    //Add Laravel CM routes
-    $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
-    //Add language files
-    $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'clever-reach');
+    //Publishes routes
+    $this->publishes([
+      __DIR__ . '/../routes' => base_path('routes')
+    ], 'clever-reach-routes');
+
+    //Publishes Actions
+    $this->publishes([
+      __DIR__ . '/Actions' => app_path('Actions')
+    ], 'clever-reach-actions');
+
+    //Publishes Livewire components
+    $this->publishes([
+      __DIR__ . '/../Livewire' => app_path('Http/Livewire/CleverReach')
+    ], 'clever-reach-livewire');
+
+    //Publishes Livewire views
+    $this->publishes([
+      __DIR__ . '/../resources/views/livewire' => resource_path('views/livewire/clever-reach')
+    ], 'clever-reach-views');
   }
 
   /**
@@ -36,35 +51,9 @@ class CleverReachServiceProvider extends ServiceProvider
    */
   public function register()
   {
-    //Merge config
-    $this->mergeConfigFrom(
-      __DIR__ . '/../config/laravel-cm.php',
-      'laravel-cm'
-    );
-    //register commands
+    //Register command
     $this->commands([
-      Commands\ControllerCommand::class,
-      Commands\ViewCommand::class,
-      Commands\LayoutCommand::class,
-      Commands\InstallCommand::class,
+      Commands\PublishCommand::class,
     ]);
-
-    //Bindings
-    $this->app->bind('Flobbos\LaravelCM\Contracts\CampaignContract', Campaigns::class);
-    $this->app->bind('Flobbos\LaravelCM\Contracts\ListContract', Lists::class);
-    $this->app->bind('Flobbos\LaravelCM\Contracts\SubscriberContract', Subscribers::class);
-    $this->app->bind('Flobbos\LaravelCM\Contracts\TemplateContract', Templates::class);
-    // Register new storage-disk
-    config(['filesystems.disks.laravel_cm' => [
-      'driver' => 'local',
-      'root' => storage_path('app/public/laravel-cm-assets'),
-      'url' => env('APP_URL') . '/storage/laravel-cm-assets',
-      'visibility' => 'public'
-    ]]);
-    // Register template-location
-    $this->app['view']->addLocation(resource_path(config('laravel-cm.template_path')));
-    //Grab loader and register static routes facade
-    $loader = AliasLoader::getInstance();
-    $loader->alias('CMRoutes', 'Flobbos\LaravelCM\Facades\CMRoutes');
   }
 }

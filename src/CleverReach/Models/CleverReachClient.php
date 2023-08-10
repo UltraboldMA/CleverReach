@@ -1,6 +1,6 @@
 <?php
 
-namespace Flobbos\CleverReach\Models;
+namespace App\Models;
 
 use Illuminate\Support\Arr;
 use Illuminate\Database\Eloquent\Model;

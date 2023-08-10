@@ -26,24 +26,21 @@ Add the package in your composer.json by executing the command.
 composer require ultraboldma/clever-reach
 ```
 
-LaravelCM features auto discover for Laravel. In case this fails, just add the
+Laravel CleverReach features auto discover for Laravel. In case this fails, just add the
 Service Provider to the app.php file.
 
 ```
-Flobbos\LaravelCM\LaravelCMServiceProvider::class,
+UltraboldMA\CleverReach\CleverReachServiceProvider::class,
 ```
 
-### Running the installation routine
+### Publishing everyting
 
-Using the new install command you are guided through the process of publishing all necessary files as well
-as set up all required directories and symlinks.
+Since we're focused on providing a working boiler plate, all necessary files will be
+published to your application structure.
 
 ```bash
-php artisan laravel-cm:install
+php artisan vendor:publish --tag=clever-reach
 ```
-
-Follow the step by step process or alternatively you can just run everything at once. There is a prompt
-for that option.
 
 ### Publish configuration file
 

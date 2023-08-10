@@ -1,16 +1,14 @@
 <?php
 
-namespace Flobbos\CleverReach\Models;
+namespace App\Models;
 
-use Sushi\Sushi;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class CleverReachSubscriber extends Model
 {
-    use Sushi;
-
-    protected $rows = [];
+    use HasFactory;
 
     protected $guarded = [];
 
