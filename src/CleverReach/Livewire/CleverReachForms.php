@@ -22,7 +22,7 @@ class CleverReachForms extends Component
         if ($this->selectedClient) {
             $this->loadForms();
         }
-        if (config('clever-reach.clever-reach.singleClient')) {
+        if (config('clever-reach.singleClient')) {
             $this->selectedClient = CleverReachClient::first()?->id;
         } else {
             $this->clients = CleverReachClient::all();
@@ -32,7 +32,7 @@ class CleverReachForms extends Component
     public function render()
     {
         $this->forms = CleverReachForm::all();
-        return view('livewire.clever-reach-forms');
+        return view('livewire.clever-reach.clever-reach-forms');
     }
 
     public function refreshForms(GetForms $getForms)
