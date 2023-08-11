@@ -36,12 +36,19 @@
                                 <td>{{ $client->clever_reach_newsletters_count }}</td>
                                 <td>{{ $client->tokenValid }}</td>
                                 <td class="text-right">
-                                    <x-button-success type="button" wire:click="refreshToken({{ $client->id }})">
+                                    <button type="button" wire:click="refreshToken({{ $client->id }})"
+                                        class="inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition bg-green-800 border border-transparent rounded-md hover:bg-green-700 active:bg-green-900 focus:outline-none focus:border-green-900 focus:ring focus:ring-green-300 disabled:opacity-25">
                                         <div wire:loading.delay.remove>Token</div>
                                         <div wire:loading.delay>Loading</div>
-                                    </x-button-success>
-                                    <x-jet-button type="button" wire:click="editClient({{ $client->id }})">Edit</x-jet-button>
-                                    <x-jet-danger-button type="button" wire:click="deleteConfirmClient({{ $client->id }})">Delete</x-jet-danger-button>
+                                    </button>
+                                    <button wire:click="editClient({{ $client->id }})" type="button"
+                                        class="items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition bg-gray-800 border border-transparent rounded-md hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25">
+                                        {{ __('Edit') }}
+                                    </button>
+                                    <button wire:click="deleteConfirmClient({{ $client->id }})" type="button"
+                                        class="inline-flex items-center justify-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition bg-red-600 border border-transparent rounded-md hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25">
+                                        {{ __('Delete') }}
+                                    </button>
                                 </td>
                             </tr>
                         @endforeach
