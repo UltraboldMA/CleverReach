@@ -1,6 +1,6 @@
 # Laravel-CleverReach
 
-![Laravel CleverReach](img/laravel-cm.png)
+![Laravel CleverReach](img/laravel-clever-reach.png)
 
 **Integration for the v3 API**
 
@@ -13,8 +13,8 @@ for generating easy signup forms.
 
 ### Docs
 
-- [Installation](#installation)
-- [Laravel compatibility](#laravel-compatibility)
+-   [Installation](#installation)
+-   [Laravel compatibility](#laravel-compatibility)
 
 ## Installation
 
