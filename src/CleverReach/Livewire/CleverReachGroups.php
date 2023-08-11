@@ -22,7 +22,7 @@ class CleverReachGroups extends Component
         if ($this->selectedClient) {
             $this->loadGroups();
         }
-        if (config('clever-reach.clever-reach.singleClient')) {
+        if (config('clever-reach.singleClient')) {
             $this->selectedClient = CleverReachClient::first()?->id;
         } else {
             $this->clients = CleverReachClient::all();
@@ -32,7 +32,7 @@ class CleverReachGroups extends Component
     public function render()
     {
         $this->groups = CleverReachGroup::all();
-        return view('livewire.clever-reach-groups');
+        return view('livewire.clever-reach.clever-reach-groups');
     }
 
     public function refreshGroups(GetGroups $getGroups)
