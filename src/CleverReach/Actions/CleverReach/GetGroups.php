@@ -2,11 +2,11 @@
 
 namespace App\Actions\CleverReach;
 
-use App\Traits\CleverReachToken;
 use Illuminate\Support\Arr;
 use App\Models\CleverReachClient;
 use App\Models\CleverReachGroup;
 use Illuminate\Support\Facades\Http;
+use UltraboldMA\CleverReach\Traits\CleverReachToken;
 
 class GetGroups
 {

@@ -2,7 +2,6 @@
 
 namespace App\Actions\CleverReach;
 
-use App\CleverReach\Client;
 use Illuminate\Support\Arr;
 use App\Models\CleverReachClient;
 use Illuminate\Support\Facades\Http;

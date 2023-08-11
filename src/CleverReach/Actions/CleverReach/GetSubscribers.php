@@ -2,10 +2,10 @@
 
 namespace App\Actions\CleverReach;
 
-use App\Traits\CleverReachToken;
 use App\Models\CleverReachClient;
 use Illuminate\Support\Facades\Http;
 use App\Models\CleverReachSubscriber;
+use UltraboldMA\CleverReach\Traits\CleverReachToken;
 
 class GetSubscribers
 {

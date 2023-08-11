@@ -4,10 +4,9 @@ namespace App\Actions\CleverReach;
 
 use Exception;
 use Illuminate\Support\Arr;
-use App\Traits\CleverReachToken;
 use App\Models\CleverReachClient;
 use Illuminate\Support\Facades\Http;
-use App\Models\CleverReachSubscriber;
+use UltraboldMA\CleverReach\Traits\CleverReachToken;
 
 class DeleteSubscriber
 {

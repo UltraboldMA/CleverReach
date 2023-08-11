@@ -3,9 +3,9 @@
 namespace App\Actions\CleverReach;
 
 use App\Models\CleverReachForm;
-use App\Traits\CleverReachToken;
 use App\Models\CleverReachClient;
 use Illuminate\Support\Facades\Http;
+use UltraboldMA\CleverReach\Traits\CleverReachToken;
 
 class GetForms
 {
