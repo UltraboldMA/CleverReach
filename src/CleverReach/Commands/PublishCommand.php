@@ -1,6 +1,6 @@
 <?php
 
-namespace CleverReach\Commands;
+namespace UltraboldMA\CleverReach\Commands;
 
 use Illuminate\Console\Command;
 
