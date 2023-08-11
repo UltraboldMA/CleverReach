@@ -40,7 +40,7 @@ class CleverReach extends Component
 
     public function render()
     {
-        return view('livewire.clever-reach')->with([
+        return view('livewire.clever-reach.clever-reach')->with([
             'cleverReachClients' => CleverReachClient::withCount('clever_reach_newsletters')->get()
         ]);
     }

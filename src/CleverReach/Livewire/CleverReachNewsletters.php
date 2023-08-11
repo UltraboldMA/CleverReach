@@ -46,7 +46,7 @@ class CleverReachNewsletters extends Component
 
     public function render()
     {
-        return view('livewire.clever-reach-newsletters')->with([
+        return view('livewire.clever-reach.clever-reach-newsletters')->with([
             'newsletters' => CleverReachNewsletter::all(),
             'groups' => CleverReachGroup::with('clever_reach_client')->get(),
             'forms' => CleverReachForm::with('clever_reach_client')->get(),

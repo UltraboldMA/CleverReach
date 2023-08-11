@@ -38,7 +38,7 @@ class CleverReachSubscribers extends Component
 
     public function render()
     {
-        return view('livewire.clever-reach-subscribers');
+        return view('livewire.clever-reach.clever-reach-subscribers');
     }
 
     public function loadSubscribers()

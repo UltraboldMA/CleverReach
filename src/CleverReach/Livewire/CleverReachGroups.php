@@ -22,7 +22,7 @@ class CleverReachGroups extends Component
         if ($this->selectedClient) {
             $this->loadGroups();
         }
-        if (config('clever-reach.singleClient')) {
+        if (config('clever-reach.clever-reach.singleClient')) {
             $this->selectedClient = CleverReachClient::first()?->id;
         } else {
             $this->clients = CleverReachClient::all();
