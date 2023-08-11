@@ -1,6 +1,6 @@
 # Laravel-CleverReach
 
-![Laravel CleverReach](img/laravel-clever-reach.png)
+![Laravel CleverReach](img/laravel-clever-reach.jpg)
 
 **Integration for the v3 API**
 
