@@ -1,5 +1,6 @@
 <?php
 
+
 Route::group(['namespace' => '\App\Http\Livewire\CleverReach'], function () {
     Route::get('clever-reach', CleverReach::class)->name('clever-reach');
     Route::get('clever-reach-groups', CleverReachGroups::class)->name('clever-reach-groups');
