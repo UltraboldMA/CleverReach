@@ -12,7 +12,7 @@ class DeleteSubscriber
 {
     use CleverReachToken;
 
-    public function handle(CleverReachClient $cleverReachClient, int $subscriberId): bool
+    public function handle(CleverReachClient $cleverReachClient, mixed $subscriberId): bool
     {
         $this->tokenValid($cleverReachClient);
 

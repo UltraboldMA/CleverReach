@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('receiver_info');
             $table->timestamp('stamp');
             $table->timestamp('last_mailing')->nullable();
-            $table->timestamp('last_changed');
+            $table->timestamp('last_changed')->nullable();
             $table->timestamps();
         });
     }
